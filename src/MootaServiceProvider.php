@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FromHome\Moota;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class MootaServiceProvider extends PackageServiceProvider
+final class MootaServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
