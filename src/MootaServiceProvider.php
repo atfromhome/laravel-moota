@@ -1,11 +1,11 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace FromHome\Moota;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class MootaServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -15,8 +15,8 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('laravel-moota')
             ->hasConfigFile()
-            ->hasMigration('create_skeleton_table');
+            ->hasMigration('create_laravel-moota_table');
     }
 }

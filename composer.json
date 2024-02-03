@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_name/:package_slug",
-    "description": ":package_description",
+    "name": "fromhome/laravel-moota",
+    "description": "Unofficial Moota integration in Laravel",
     "keywords": [
         "php",
         "laravel",
         "laravel-package"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/atfromhome/laravel-moota",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Nuradiyana",
+            "email": "me@nooradiana.com",
             "role": "Developer"
         }
     ],
@@ -22,17 +22,18 @@
     "require-dev": {
         "laravel/pint": "^1.10",
         "orchestra/testbench": "^8.0",
+        "roave/security-advisories": "dev-latest",
         "vimeo/psalm": "^5.0"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "FromHome\\Moota\\": "src",
+            "FromHome\\Moota\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "FromHome\\Moota\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -49,7 +50,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "FromHome\\Moota\\MootaServiceProvider"
             ]
         }
     },
