@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace FromHome\Moota\Database\Eloquent;
 
+use Throwable;
 use Illuminate\Http\Request;
 use FromHome\Moota\LaravelMoota;
 use Spatie\LaravelData\DataCollection;
@@ -37,6 +38,28 @@ abstract class WebhookCall extends Model
             'payload' => $request->input(),
             'headers' => $request->header(),
         ]);
+    }
+
+    public function saveException(Throwable $exception): self
+    {
+        $this->setAttribute('exception', [
+            'code' => $exception->getCode(),
+            'message' => $exception->getMessage(),
+            'trace' => $exception->getTraceAsString(),
+        ]);
+
+        $this->save();
+
+        return $this;
+    }
+
+    public function clearException(): self
+    {
+        $this->setAttribute('exception', null);
+
+        $this->save();
+
+        return $this;
     }
 
     public function getPayloadData(): DataCollection

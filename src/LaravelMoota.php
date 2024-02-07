@@ -6,8 +6,10 @@ namespace FromHome\Moota;
 
 use Illuminate\Http\Request;
 use Webmozart\Assert\Assert;
+use Illuminate\Support\Facades\Route;
 use FromHome\Moota\Jobs\ProcessWebhookJob;
 use FromHome\Moota\Database\Eloquent\WebhookCall;
+use FromHome\Moota\Http\Controllers\WebhookHandlerController;
 
 final class LaravelMoota
 {
@@ -45,11 +47,18 @@ final class LaravelMoota
 
     public static function dispatchProcessWebhookJob(WebhookCall $webhookCall): void
     {
+        $webhookCall->clearException();
+
         self::getProcessWebhookCallJobClass()::dispatch($webhookCall);
     }
 
     public static function storeWebhookCall(Request $request): WebhookCall
     {
         return self::getWebhookCallModelClass()::storeFromRequest($request);
+    }
+
+    public static function routes(): void
+    {
+        Route::post('/moota/webhook/handler', [WebhookHandlerController::class, 'store']);
     }
 }

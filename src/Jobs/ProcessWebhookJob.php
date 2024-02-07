@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace FromHome\Moota\Jobs;
 
+use Throwable;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -21,5 +22,10 @@ abstract class ProcessWebhookJob implements ShouldQueue
     public function __construct(
         public WebhookCall $webhookCall
     ) {
+    }
+
+    public function failed(Throwable $exception): void
+    {
+        $this->webhookCall->saveException($exception);
     }
 }

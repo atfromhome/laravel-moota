@@ -10,7 +10,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('moota_webhook_calls', static function (Blueprint $table): void {
+        Schema::create(\config('moota.webhook_call.table'), static function (Blueprint $table): void {
             $table->ulid('id')->primary();
             $table->json('headers')->nullable();
             $table->json('payload')->nullable();

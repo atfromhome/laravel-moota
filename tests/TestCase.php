@@ -6,6 +6,7 @@ namespace FromHome\Moota\Tests;
 
 use FromHome\Moota\MootaServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Spatie\LaravelData\LaravelDataServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
@@ -13,6 +14,7 @@ abstract class TestCase extends Orchestra
     {
         return [
             MootaServiceProvider::class,
+            LaravelDataServiceProvider::class,
         ];
     }
 }
