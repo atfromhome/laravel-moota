@@ -21,7 +21,6 @@ abstract class WebhookCall extends Model
     protected $casts = [
         'payload' => 'array',
         'headers' => 'array',
-        'exception' => 'string',
     ];
 
     public function getTable(): string
