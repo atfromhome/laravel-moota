@@ -7,15 +7,29 @@ namespace FromHome\Moota\Http\Controllers;
 use Illuminate\Http\Request;
 use FromHome\Moota\LaravelMoota;
 use Illuminate\Http\JsonResponse;
+use FromHome\Moota\Exceptions\InvalidConfig;
+use FromHome\Moota\WebhookSignatureValidator;
 
 final class WebhookHandlerController
 {
-    public function store(Request $request): JsonResponse
+    public function store(Request $request, WebhookSignatureValidator $signatureValidator): JsonResponse
     {
-        $webhookCall = LaravelMoota::storeWebhookCall($request);
+        try {
+            if ($signatureValidator->isValid($request)) {
+                $webhookCall = LaravelMoota::storeWebhookCall($request);
 
-        LaravelMoota::dispatchProcessWebhookJob($webhookCall);
+                LaravelMoota::dispatchProcessWebhookJob($webhookCall);
 
-        return new JsonResponse(null, 204);
+                return new JsonResponse(null, 204);
+            }
+
+            return new JsonResponse([
+                'message' => 'Invalid signature',
+            ], 422);
+        } catch (InvalidConfig $exception) {
+            return new JsonResponse([
+                'message' => $exception->getMessage(),
+            ], 500);
+        }
     }
 }

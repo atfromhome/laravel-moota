@@ -1,8 +1,6 @@
 {
-    "X-MOOTA-USER": "lkjqwle",
-    "X-MOOTA-WEBHOOK": "oiuoiuqwe",
     "User-Agent": "MootaBot/1.5",
-    "Signature": "oiuqwknlasdkuovasl;dkjzx..",
+    "Signature": "e717ca2bf26ccaffa5633f56e6493dad309f2a0190581ced69de6b295155e616",
     "Content-Type": "application/json",
     "Accept": "application/json"
 }

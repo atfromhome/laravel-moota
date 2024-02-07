@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Webmozart\Assert\Assert;
 use Illuminate\Support\Facades\Route;
 use FromHome\Moota\Jobs\ProcessWebhookJob;
+use FromHome\Moota\Exceptions\InvalidConfig;
 use FromHome\Moota\Database\Eloquent\WebhookCall;
 use FromHome\Moota\Http\Controllers\WebhookHandlerController;
 
@@ -33,10 +34,14 @@ final class LaravelMoota
 
     /**
      * @param  class-string<ProcessWebhookJob>  $className
+     *
+     * @throws InvalidConfig
      */
     public static function registerWebhookCallJob(string $className): void
     {
-        Assert::classExists($className);
+        if (! is_subclass_of($className, ProcessWebhookJob::class)) {
+            throw InvalidConfig::invalidProcessWebhookJob($className);
+        }
 
         self::$jobClass = $className;
     }

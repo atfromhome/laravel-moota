@@ -22,7 +22,7 @@ final class MutationData extends Data
         public readonly string $type,
         public readonly float|int $amount,
         public readonly string $description,
-        public readonly BankData $bank,
+        public readonly ?BankData $bank = null,
     ) {
     }
 }

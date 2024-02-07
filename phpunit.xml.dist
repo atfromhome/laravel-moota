@@ -22,5 +22,6 @@
     </source>
     <php>
         <env name="DB_CONNECTION" value="testing"/>
+        <env name="MOOTA_SIGNATURE_SECRET" value="secret-token" />
     </php>
 </phpunit>

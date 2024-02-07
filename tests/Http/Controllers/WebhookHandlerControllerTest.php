@@ -29,12 +29,12 @@ final class WebhookHandlerControllerTest extends TestCase
         $this->assertNotNull($webhookCall);
 
         $dataCollection = $webhookCall->getPayloadData();
-        $this->assertCount(2, $dataCollection);
+        $this->assertCount(1, $dataCollection);
 
         $mutation = $dataCollection->first();
         $this->assertInstanceOf(MutationData::class, $mutation);
         $this->assertSame($mutation->mutationId, $data[0]['mutation_id']);
-        $this->assertSame($mutation->bank->bankId, $data[0]['bank']['bank_id']);
+        $this->assertNull($mutation->bank);
 
         Bus::assertDispatched(StubProcessWebhookJob::class);
     }
