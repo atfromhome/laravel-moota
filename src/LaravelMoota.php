@@ -13,6 +13,9 @@ use FromHome\Moota\Http\Controllers\WebhookHandlerController;
 
 final class LaravelMoota
 {
+    /**
+     * @var class-string<ProcessWebhookJob>|null
+     */
     private static ?string $jobClass = null;
 
     public static function getWebhookCallTableName(?string $default = null): string
@@ -28,6 +31,9 @@ final class LaravelMoota
         return \config('moota.webhook_call.model', $default);
     }
 
+    /**
+     * @param  class-string<ProcessWebhookJob>  $className
+     */
     public static function registerWebhookCallJob(string $className): void
     {
         Assert::classExists($className);
@@ -40,9 +46,11 @@ final class LaravelMoota
      */
     public static function getProcessWebhookCallJobClass(): string
     {
-        Assert::notNull(self::$jobClass);
+        $jobClass = self::$jobClass;
 
-        return self::$jobClass;
+        Assert::notNull($jobClass);
+
+        return $jobClass;
     }
 
     public static function dispatchProcessWebhookJob(WebhookCall $webhookCall): void
