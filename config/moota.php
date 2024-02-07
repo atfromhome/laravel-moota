@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-// config for FromHome/Moota
 return [
+    'webhook_call' => [
+        'table' => 'moota_webhook_calls',
 
+        'model' => FromHome\Moota\Models\WebhookCall::class,
+    ],
 ];
