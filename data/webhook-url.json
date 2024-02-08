@@ -1,0 +1,15 @@
+{
+    "id": 1,
+    "user_id": 1,
+    "bank_account_id": "VLagzqBj42D",
+    "type": "single",
+    "url": "http://moota.test/integrations/webhook",
+    "secret_token": "ldpJKYQc",
+    "start_unique_code": "1",
+    "end_unique_code": "999",
+    "kinds": "credit",
+    "created_at": "2022-02-24T10:00:31.000000Z",
+    "updated_at": "2022-02-24T10:00:31.000000Z",
+    "token": "VLagzqBj42D",
+    "webhook_id": "VLagzqBj42D"
+}

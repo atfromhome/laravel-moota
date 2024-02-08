@@ -14,12 +14,14 @@ final class WebhookSignatureValidator
      */
     public function isValid(Request $request): bool
     {
+        /** @var string|null $signature */
         $signature = $request->header('signature');
 
         if (! $signature) {
             return false;
         }
 
+        /** @var string|null $signingSecret */
         $signingSecret = \config('moota.webhook_call.signature_secret');
 
         if (empty($signingSecret)) {

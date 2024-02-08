@@ -15,8 +15,8 @@ final class BankDataTest extends TestCase
 
         $bank = BankData::from($data);
 
-        $this->assertSame($bank->bankId, $data['bank_id']);
+        $this->assertSame($bank->id, $data['id']);
         $this->assertSame($bank->label, $data['label']);
-        $this->assertSame($bank->accountNumber, $data['account_number']);
+        $this->assertSame($bank->price, $data['price']);
     }
 }
