@@ -13,9 +13,4 @@
       <code><![CDATA[$jobClass]]></code>
     </NullableReturnStatement>
   </file>
-  <file src="src/Models/WebhookCall.php">
-    <InvalidTemplateParam>
-      <code><![CDATA[WebhookCall]]></code>
-    </InvalidTemplateParam>
-  </file>
 </files>
