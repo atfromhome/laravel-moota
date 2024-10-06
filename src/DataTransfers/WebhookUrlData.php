@@ -19,6 +19,5 @@ final class WebhookUrlData extends Data
         public readonly ?string $kinds,
         #[MapInputName('bank_account_id')]
         public readonly ?string $bankId,
-    ) {
-    }
+    ) {}
 }

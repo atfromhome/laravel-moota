@@ -13,7 +13,7 @@ final class MootaServiceProvider extends PackageServiceProvider
 {
     public function registeringPackage(): void
     {
-        $this->app->singleton(HttpSender::class, fn () => new HttpSender());
+        $this->app->singleton(HttpSender::class, fn () => new HttpSender);
 
         $this->app->singleton(MootaConnector::class, function (): MootaConnector {
             return new MootaConnector(

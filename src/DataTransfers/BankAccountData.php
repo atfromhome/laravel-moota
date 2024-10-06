@@ -15,6 +15,5 @@ final class BankAccountData extends Data
         public readonly string $bankId,
         public readonly string $label,
         public readonly string $accountNumber
-    ) {
-    }
+    ) {}
 }

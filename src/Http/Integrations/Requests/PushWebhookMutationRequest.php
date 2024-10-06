@@ -13,8 +13,7 @@ final class PushWebhookMutationRequest extends Request
 
     public function __construct(
         private readonly string|int $mutationId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

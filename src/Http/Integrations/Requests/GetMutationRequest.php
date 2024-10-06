@@ -18,8 +18,7 @@ final class GetMutationRequest extends Request
 
     public function __construct(
         private readonly ?FilterMutationInput $input,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

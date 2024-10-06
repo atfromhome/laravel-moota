@@ -17,8 +17,7 @@ final class MootaConnector extends Connector implements HasPagination
 {
     public function __construct(
         private readonly string $token
-    ) {
-    }
+    ) {}
 
     public function resolveBaseUrl(): string
     {
