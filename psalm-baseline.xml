@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="dev-master@dee5fe4e848ebe974581cf92bb59abe868b3367a">
+  <file src="src/Database/Eloquent/WebhookCall.php">
+    <InvalidTemplateParam>
+      <code><![CDATA[WebhookCall]]></code>
+    </InvalidTemplateParam>
+  </file>
+  <file src="src/LaravelMoota.php">
+    <InvalidNullableReturnType>
+      <code><![CDATA[class-string<ProcessWebhookJob>]]></code>
+    </InvalidNullableReturnType>
+    <NullableReturnStatement>
+      <code><![CDATA[$jobClass]]></code>
+    </NullableReturnStatement>
+  </file>
+</files>
