@@ -13,8 +13,7 @@ final class DeleteBankAccountRequest extends Request
 
     public function __construct(
         private readonly string|int $bankId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

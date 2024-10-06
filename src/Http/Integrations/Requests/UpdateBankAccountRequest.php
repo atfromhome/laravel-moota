@@ -22,8 +22,7 @@ final class UpdateBankAccountRequest extends Request implements HasBody
     public function __construct(
         private readonly string|int $bankId,
         private readonly BankAccountInput $input
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

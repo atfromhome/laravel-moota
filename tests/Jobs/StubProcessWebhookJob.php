@@ -8,7 +8,5 @@ use FromHome\Moota\Jobs\ProcessWebhookJob;
 
 final class StubProcessWebhookJob extends ProcessWebhookJob
 {
-    public function handle(): void
-    {
-    }
+    public function handle(): void {}
 }

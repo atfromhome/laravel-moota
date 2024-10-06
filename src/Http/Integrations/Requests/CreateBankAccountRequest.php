@@ -21,8 +21,7 @@ final class CreateBankAccountRequest extends Request implements HasBody
 
     public function __construct(
         private readonly BankAccountInput $input
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

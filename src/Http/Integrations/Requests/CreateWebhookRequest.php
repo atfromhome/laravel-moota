@@ -18,8 +18,7 @@ final class CreateWebhookRequest extends Request implements HasBody
 
     public function __construct(
         private readonly WebhookUrlInput $input
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

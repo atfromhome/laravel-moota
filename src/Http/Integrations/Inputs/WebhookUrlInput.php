@@ -22,6 +22,5 @@ final class WebhookUrlInput extends Data
         public readonly int $startUniqueCode = 1,
         public readonly int $endUniqueCode = 999,
         public readonly ?string $bankAccountId = null,
-    ) {
-    }
+    ) {}
 }

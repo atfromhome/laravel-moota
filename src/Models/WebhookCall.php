@@ -6,6 +6,4 @@ namespace FromHome\Moota\Models;
 
 use FromHome\Moota\Database\Eloquent;
 
-final class WebhookCall extends Eloquent\WebhookCall
-{
-}
+final class WebhookCall extends Eloquent\WebhookCall {}

@@ -19,6 +19,5 @@ final class FilterMutationInput extends Data
         public readonly null|string|int $bankId = null,
         public readonly ?DateTime $startDate = null,
         public readonly ?DateTime $endDate = null,
-    ) {
-    }
+    ) {}
 }

@@ -12,6 +12,5 @@ final class BankData extends Data
         public readonly string $id,
         public readonly float|int $price,
         public readonly string $label
-    ) {
-    }
+    ) {}
 }

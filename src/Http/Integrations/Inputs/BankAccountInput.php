@@ -19,6 +19,5 @@ final class BankAccountInput extends Data
         public readonly string $nameHolder,
         public readonly string $accountNumber,
         public readonly bool $isActive = true,
-    ) {
-    }
+    ) {}
 }

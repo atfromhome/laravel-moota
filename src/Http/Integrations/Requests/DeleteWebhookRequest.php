@@ -13,8 +13,7 @@ final class DeleteWebhookRequest extends Request
 
     public function __construct(
         private readonly string|int $webhookId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {
